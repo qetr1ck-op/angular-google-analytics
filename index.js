@@ -9,6 +9,7 @@
     } else {
       factory(angular);
     }
+    module.exports = 'angular-google-analytics';
   } else {
     factory(root.angular);
   }
