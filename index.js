@@ -4,7 +4,11 @@
   if (typeof define === 'function' && define.amd) {
     define(['angular'], factory);
   } else if (typeof module === 'object' && module.exports) {
-    module.exports = factory(require('angular'));
+    if (typeof angular === 'undefined') {
+      factory(require('angular'));
+    } else {
+      factory(angular);
+    }
   } else {
     factory(root.angular);
   }
